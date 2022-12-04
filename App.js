@@ -1,20 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { SafeAreaView, Text, View } from 'react-native';
+import Modal from './components/Modal';
+import MusicPlayer from './components/MusicPlayer';
 
 export default function App() {
+const [darkMode, setdarkMode] = useState(true)
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <SafeAreaView className={`flex-1 items-center ${darkMode ? "bg-black":"bg-white "}
+    `}>
+  <View className="mt-8 dark">
+    <MusicPlayer darkMode={darkMode} setdarkMode={setdarkMode}/>
+    {/* <Modal/> */}
       <StatusBar style="auto" />
     </View>
+    </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
