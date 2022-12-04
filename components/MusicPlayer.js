@@ -4,15 +4,17 @@ import { Image, Text, TouchableOpacity, View } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import FontAwsome from "@expo/vector-icons/FontAwesome";
 
-export default function MusicPlayer({darkMode, setdarkMode}) {
-
-  return (
+export default function MusicPlayer({ darkMode, setdarkMode }) {
+  return (<>
     <View>
       <View>
         <View className="TITLE">
-          <Text onPress={()=>{
-            setdarkMode(!darkMode)
-          }} className="font-bold text-xl text-center text-slate-900">
+          <Text
+            onPress={() => {
+              setdarkMode(!darkMode);
+            }}
+            className="font-bold text-xl text-center text-slate-900"
+          >
             Dyootify
           </Text>
         </View>
@@ -55,7 +57,7 @@ export default function MusicPlayer({darkMode, setdarkMode}) {
             <Text>00.00</Text>
             <Text>00.00</Text>
           </View>
-        </View> 
+        </View>
         {/* slider end  */}
 
         {/* control pannel start */}
@@ -77,18 +79,11 @@ export default function MusicPlayer({darkMode, setdarkMode}) {
           </TouchableOpacity>
         </View>
         {/* control pannel end  */}
-{/* song list  */}
-<View >
-<TouchableOpacity className="flex-row mt-24 justify-between items-center" onPress={() => {}}>
-<Ionicons name="musical-note" size={30} color="#888888" />
-<Text className="text-lg text-slate-600">List of songes to View</Text>
-
-            <Ionicons name="chevron-up" size={30} color="#888888" />
-          </TouchableOpacity>
-</View>
-{/* song list end  */}
+        
 
       </View>
     </View>
+          </>
+        
   );
 }
