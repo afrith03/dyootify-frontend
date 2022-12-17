@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
-import { SafeAreaView, Text, View } from "react-native";
+import { Alert, SafeAreaView, Text, View } from "react-native";
 import Modal from "./components/Modal";
 import MusicPlayer from "./components/MusicPlayer";
 import Songlist from "./components/Songlist";
@@ -22,7 +22,7 @@ export default function App() {
             axios
               .get(endPoint + "/welcome")
               .then(function (response) {
-                console.log(response.data);
+               alert(response.data);
               })
               .catch(function (error) {
                 console.log(error);

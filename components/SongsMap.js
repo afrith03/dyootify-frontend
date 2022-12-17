@@ -10,7 +10,7 @@ function SongsMap({loadedSongs}) {
           key={index}
           className="p-3 flex-row bg-orange-200 rounded-2xl my-2 items-center"
           onPress={()=>{
-            console.log(item)
+            console.log(item + index)
           }}
         >
           <Ionicons name="musical-note" size={30} color="#888888" />
